@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>JS API</title>
+    </head>
+    <body>
+        <div><button id="button1">Play!</button></div>
+        <div id="demo"></div>
+        <div id="hint"></div>
+        
+        <script>
+            var myButton = document.getElementById("button1");
+
+myButton.addEventListener("click", game, "false");
+
+function game (){
+    var x = Math.random() * (1, 100);
+    var a = Math.round(x);
+    console.log(a);
+    var b = a % 2;
+//    var hint;
+//    var hintMult = a * 2;
+//    var hintDivid = a / 2;
+//    if (b = 0){
+//        hint = hintDivid;
+//    } else {
+//        hint = hintMult;
+//    }
+    //even number = 0, odd number = 1;
+    console.log(b)
+//    hint = a * 2;
+//    console.log(hint);
+//    document.getElementById("hint").innerHTML = hint;
+//    document.getElementById("demo").innerHTML = a;
+    if (b == 0){
+        var guess = prompt("Guess the number. Hint: The Number is " + (a / 2) + " * 2" );
+    } else {
+            var guess = prompt("Guess the number. Hint: The Number is " + (a * 2) + " ÷ 2" );
+    }
+
+    document.getElementById("demo").innerHTML ="Your previous guess = " + guess;
+    
+    if(guess == a){
+        alert("You guessed right");
+    } else {
+        alert("You guessed wrong!");
+    }
+    
+    
+}
+        </script>
+        
+<!--        <script src="myScript.js"></script>-->
+    </body>
+<html>
